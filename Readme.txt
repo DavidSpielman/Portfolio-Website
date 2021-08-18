@@ -1,4 +1,4 @@
-Thanks for downloading this template!
+This is the template I used to create this website:
 
 Template Name: Folio
 Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
