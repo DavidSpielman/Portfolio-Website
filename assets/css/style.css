@@ -974,6 +974,7 @@ p {
   text-transform: capitalize;
   display: inline-block;
   float: none;
+  color: #000000;
 }
 
 .content-main .post-meta a {
