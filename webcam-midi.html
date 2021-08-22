@@ -91,15 +91,15 @@
               <div class="container-main single-main">
                 <div class="col-md-12">
                   <div class="block-main mb-30">
-                    <img src="assets/img/blog-post-big.jpg" class="img-responsive" alt="reviews2">
+                    <img src="assets/img/portfolio/Webcam_Midi_Controller/webcam-midi-project-icon.jpg" class="img-fluid" alt="">
                     <div class="content-main single-post padDiv">
                       <div class="journal-txt">
-                        <h4><a href="#">Reverse Engineering: Nail Dryer Fan</a></h4>
+                        <h4><a href="#">Webcam MIDI Controller</a></h4>
                       </div>
                       <div class="post-meta">
                         <ul class="list-unstyled mb-0">
                           <!--<li class="author">by:<a href="#">medsign</a></li>-->
-                          <li class="date">date:September 2019 - December 2019</li>
+                          <li class="date">date: July 2021 - Present</li>
                           <!--<li class="commont"><i class="ion-ios-heart-outline"></i><a href="#">3 Comments</a></li>-->
                         </ul>
                       </div>
@@ -108,17 +108,16 @@
                         color: black;
                       }
                       </style>
-                      <p class="mb-30">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
-                        using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web
-                        sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                      <p class="mb-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                      <blockquote>If you are still looking for that one person who will change your life, take a look in the mirror.</blockquote>
-                      <p class="mb-30">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
-                        Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections
-                        1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
-                        "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                      <p class="mb-30">In my free time I enjoy composing music. The inspiration for this project came about as I was brainstrorming interersting ways to make and play music. When I was younger, I remember enjoying outdoor interactive music installationsat children's science museums. I wanted to recreate the satisfaction of striking a chime or PVC pipe with a paddle at home, so I began working on this MIDI controller.</p>
+                      <p class="mb-30">This project incorporates OpenCV, ROS, a Teensy 4.0 microcontroller, a Logitech Pro 9000 USB webcam, the Reaper DAW (Digital Audio Workstation), and a table tennis paddle. OpenCV tracks the position of the table tennis paddle on the live video footage displayed by the webcam, and depending on where the paddle is placed on the screen, a ROS publisher node will publish note data to a subscriber node associated to the Teensy microcontroller. The Teensy microcontroller will then send MIDI data to the Reaper DAW where it will be converted into recordable sound using audio plugins.</p>
+                      <p class="mb-30">To track the position of the table tennis paddle I needed to use a computer vision library. I decided to go with OpenCV since it is open source and is widely used. This was my first exposure to computer vision and OpenCV, so I was excited to start learning through this project.</p>
+                      <p class="mb-30">After about a week and a half of reading through the OpenCV documentation, troubleshooting installation and video capture issues, and consulting many forums and YouTube videos, I learned enough to create the tracker below. It uses OpenCV's built-in CSRT tracker which I found to work best for this application. I placed a Post-It note on the table tennis paddle to improve tracking. I also added a reset function to readjust the selected region of interest (ROI) if the tracker lost the object being tracked. In the GIF below, I selected the ROI to be the table tennis paddle, and then I reset the ROI to track my face.</p>
+                      <img src="assets/img/portfolio/Webcam_Midi_Controller/Tracking Paddle & Reset Test.gif" class="center2" alt="">
+                      <p class="mb-30">Once the tracker was ready, I added an GUI interface on the video displayed by the webcam to help the user select which note interval they wished to play. Based on the location of the center of the ROI (the red dot in the gif below) OpenCV will publish which interval the user has selected through a ROS publisher node. </p>
+                      <img src="assets/img/portfolio/Webcam_Midi_Controller/Gui_Layout_Test.gif" class="center2" alt="">
+                      <p class="mb-30">The ROS publisher node sends messages through rosserial which is a way for ROS to communicate with Arduino compatible microcontrollers. I chose to use a Teensy 4.0 microcontroller since it can natively send MIDI data through USB, is Arduino IDE compatible, and due to its small size. I have made a ROS subscriber node that works with the Teensy microcontroller, but due to issues with a previous Teensy microcontroller that was defective, I am still working on ways to send MIDI data from the subscriber node to my DAW using a new Teensy microcontroller. (DAW stands for Digital Audio Workstation and it is a software tool used by many musicians to manipulate, record, and process sound to make and release music.) </p>
+                      <p class="mb-30">The next step for this project is to send MIDI data from the Teensy microcontroller to the Reaper DAW. I also plan on adding an IMU to the table tennis paddle to translate how hard the GUI boxes are "hit" to MIDI velocity data. This will allow the user to control the volume of the notes produced by how fast they move the paddle.</p>
+                      <a href="https://github.com/DavidSpielman/Webcam-Midi-Controller"><u>Click here to view the source code for this project</u></a>
                     </div>
                   </div>
                 </div>
