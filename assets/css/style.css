@@ -202,7 +202,7 @@ p {
 }
 
 #header .logo a {
-  color: #898989;
+  color: #000000;
 }
 
 #header .logo img {
@@ -219,7 +219,7 @@ p {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -245,7 +245,7 @@ p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7e7d7d;
+  color: #000000;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -257,7 +257,7 @@ p {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #b8a07e;
+  color: #9C6C0D;
 }
 
 .navbar .dropdown ul {
@@ -321,7 +321,7 @@ p {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #4b4a4a;
@@ -538,16 +538,16 @@ p {
 }
 
 #about .div-img-bg {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   border: 20px solid #b8a07e;
 }
 
 #about .div-img-bg .about-img img {
   width: 100%;
   box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
-  margin-top: -60px;
+  margin-top: -40px;
   margin-left: 40px;
-  height: 400px;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -556,12 +556,14 @@ p {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
   text-align: left;
+  color: #000000
 }
 
 #about .about-descr .separator {
   max-width: 80%;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   text-align: left;
+  color: #4a5356
 }
 
 /*--------------------------------------------------------------
@@ -570,7 +572,7 @@ p {
 #services {
   background: #f7f7f7;
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
 }
 
 .services-block span {
@@ -972,6 +974,7 @@ p {
   text-transform: capitalize;
   display: inline-block;
   float: none;
+  color: #000000;
 }
 
 .content-main .post-meta a {
